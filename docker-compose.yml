@@ -33,13 +33,15 @@ services:
   wordpress: 
     depends_on: 
       - db
-    image: jstreuper/wordpress:latest
+    image: burovoordeboeg/wordpress:latest
     ports: 
       - '8000:80'
     restart: always
-    volumes: ['./wordpress/themes:/var/www/html/content/themes', 
-              './wordpress/plugins:/var/www/html/content/plugins',
-              './wordpress/uploads:/var/www/html/content/uploads']
+    volumes: [
+      './wordpress/themes:/var/www/html/content/themes', 
+      './wordpress/plugins:/var/www/html/content/plugins',
+      './wordpress/uploads:/var/www/html/content/uploads'
+    ]
     networks: 
       - wpsite
 
